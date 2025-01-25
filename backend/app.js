@@ -5,6 +5,7 @@ import http from 'http'
 
 import SequelizeConnection from './db/seq.connection.js'
 import logger from './logs/logger.js'
+import router from './src/routes/user.route.js'
 
 const app = express()
 app.use(
@@ -14,6 +15,7 @@ app.use(
     })
 )
 app.use(express.json())
+app.use('/api', router)
 
 const server = http.createServer(app)
 

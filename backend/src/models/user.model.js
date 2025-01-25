@@ -1,7 +1,8 @@
-const { Sequelize } = require('sequelize');
-const { sequelize } = require('../../db/seq.connection');
+import Sequelize from 'sequelize'
 
-const User = sequelize.define('User', {
+import SequelizeConnection from '../../db/seq.connection.js'
+
+const User = SequelizeConnection.sequelize.define('User', {
     id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -15,8 +16,12 @@ const User = sequelize.define('User', {
             isEmail: true
         },
         set(value) {
-            this.setDataValue('email', value.toLowerCase());
+            this.setDataValue('email', value.toLowerCase())
         }
+    },
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
     },
     firstName: {
         type: Sequelize.STRING,
@@ -25,7 +30,7 @@ const User = sequelize.define('User', {
     lastName: {
         type: Sequelize.STRING
     },
-    displayName: {
+    userName: {
         type: Sequelize.STRING
     },
     dob: {
@@ -33,10 +38,6 @@ const User = sequelize.define('User', {
     },
     profilePic: {
         type: Sequelize.STRING
-    },
-    timeZone: {
-        type: Sequelize.STRING,
-        defaultValue: 'Asia/Kolkata'
     },
     gender: {
         type: Sequelize.ENUM('male', 'female', 'other')
@@ -48,6 +49,6 @@ const User = sequelize.define('User', {
             len: [7, 16]
         }
     }
-});
+})
 
-module.exports = { User };
+export default User
