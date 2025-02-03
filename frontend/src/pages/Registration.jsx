@@ -1,10 +1,15 @@
 import React from 'react';
-import RegisterForm from '../components/RegisterForm';
+import AuthForm from '../components/AuthForm';
 
 const Registration = () => {
+    const handleRegister = (event) => {
+        event.preventDefault();
+        console.log('Register!');
+    };
+
     return (
         <>
-            <RegisterForm />
+            <AuthForm mode="register" onSubmit={handleRegister} />
         </>
     );
 };

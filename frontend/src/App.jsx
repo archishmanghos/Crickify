@@ -1,4 +1,4 @@
-import { DarkThemeToggle } from 'flowbite-react';
+// import { DarkThemeToggle } from 'flowbite-react';
 import { AuthProvider, useAuth } from './context/auth';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';

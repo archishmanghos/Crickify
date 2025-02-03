@@ -1,10 +1,15 @@
 import React from 'react';
-import LoginForm from '../components/LoginForm';
+import AuthForm from '../components/AuthForm';
 
 const Login = () => {
+    const handleLogin = (event) => {
+        event.preventDefault();
+        console.log('Login!');
+    };
+
     return (
         <>
-            <LoginForm />
+            <AuthForm mode="login" handleLogin={handleLogin} />
         </>
     );
 };
