@@ -39,7 +39,7 @@ const Navbar = ({ isAuthenticated, setIsAuthenticated }) => {
                         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                             <img src={crickifyLogo} className="h-8" alt="Flowbite Logo" />
                             <span className="self-center whitespace-nowrap font-sans text-2xl font-bold dark:text-white">
-                                Crickify
+                                NotOut
                             </span>
                         </Link>
                     </div>
